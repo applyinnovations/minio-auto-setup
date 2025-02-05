@@ -26,7 +26,7 @@ should_keep_bucket() {
 # Get the list of existing buckets
 EXISTING_BUCKETS=""
 while read -r line; do
-    EXISTING_BUCKETS="$EXISTING_BUCKETS $(echo "$line" | tr -s ' ' | cut -d' ' -f5)"
+    EXISTING_BUCKETS="$EXISTING_BUCKETS $(echo "$line" | tr -d '/' | tr -s ' ' | cut -d' ' -f5)"
 done < <(mc ls minio)
 
 # Clean up existing buckets not in BUCKET_NAMES
