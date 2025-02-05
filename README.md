@@ -13,7 +13,7 @@ This repository contains a Docker image for creating an MinIO docker with enviro
 
 To build the Docker image:
 ```sh
-docker build -t minio-auto-setup:latest .
+docker build .
 ```
 
 ### Run the Docker Container
@@ -27,7 +27,7 @@ To run the container with the necessary configurations:
         -e MINIO_ROOT_PASSWORD=mock_secret_key \
         -e BUCKET_NAMES="bucket1,bucket2" \
         -v /your/local/data/path:/data \
-        minio-auto-setup:latest
+        ghcr.io/applyinnovations/minio-auto-setup:latest
 ```
 
 **Explanation of Flags:**
